@@ -33,7 +33,9 @@ $array = json_decode($string, true); //json decoder
 	<?php 
 		echo "<h2>" . $array['headline'] . "</h2>"; 
 		echo gmdate("j F, Y, g:i a", strtotime($array['created'])); 
-		echo "<img src=\"" . $array['updates'][0]['image']['medium'] . "\">";
+		if ($array['updates'][0]['image']['medium']) {
+			echo "<br><img src=\"" . $array['updates'][0]['image']['medium'] . "\">";
+		}
 		echo "<h4>Get me to " . $array['place']['name'] . "</h4>";
 	?>
 	<div data-role="controlgroup">

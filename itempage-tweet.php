@@ -16,9 +16,18 @@ $long = $_GET['long'];
 $currentloc = $_GET['currentloc'];
 $radius = $_GET['radius'];
 $transport = $_GET['transport'];
-$twitter_url = "https://api.twitter.com/1/statuses/show.json?id=" . $id  . "&include_entities=true";
-$twitter_string .= file_get_contents($twitter_url); // get json content
-$twitter_array = json_decode($twitter_string, true); //json decoder
+$twitter_url = "https://api.twitter.com/1/statuses/show.json?id=" . $id  . "&amp;include_entities=true";
+
+$curl_handle=curl_init();
+curl_setopt($curl_handle, CURLOPT_URL,$twitter_url);
+curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
+curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($curl_handle, CURLOPT_USERAGENT, 'dispatchorama');
+$query = curl_exec($curl_handle);
+curl_close($curl_handle);
+
+#$twitter_string = file_get_contents($twitter_url, true); // get json content
+$twitter_array = json_decode($query, true); //json decoder
 ?>
 
 </head>
@@ -31,7 +40,7 @@ $twitter_array = json_decode($twitter_string, true); //json decoder
 
 <div data-role="content" data-fullscreen="true">
 	<?php 
-	#echo $twitter_url;
+	#echo $query;
 		echo "<h2>" . $twitter_array['text'] . "</h2>"; 
 		echo $twitter_array['created_at'] . "<br><br>"; 
 		echo "<a href=\"" . $twitter_array['entities']['urls'][0]['expanded_url'] . "\">" . $twitter_array['entities']['urls'][0]['display_url'] . "</a>";
