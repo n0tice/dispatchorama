@@ -45,7 +45,8 @@ $array = json_decode($string, true); //json decoder
 		echo "<a href=\"directions.php?id=" . $id . "&transport=transit&currentloc=" . $currentloc . "\" data-role=\"button\" data-icon=\"info\">public transport</a>";
 	?>
 	</div>
-</div>
+</div>		
+
 	
 </div>
 </body>

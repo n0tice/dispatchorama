@@ -114,8 +114,8 @@
 <body onload="initialise()">
 <div data-role="page" data-theme="b" id="jqm-home">
 	<div data-role="header" data-position="inline">
-		<h1>dispatchorama</h1>
-	</div>
+   <center><img src="img/dispatchorama-logo.png"></center>
+   </div>
 
 	<div data-role="content" data-fullscreen="true">
 
@@ -124,6 +124,7 @@
 
 	</div>
 
+<?php include('footer.php'); ?>
 
 </div>
 

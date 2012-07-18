@@ -35,7 +35,7 @@ $maps_array = json_decode($maps_string, true); //json decoder
 <div data-role="page" data-theme="b" id="jqm-home">
 
 <div data-role="header" data-position="inline">
-   <a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false">back</a><h1>dispatchorama</h1><a href="index.php" data-icon='home'  data-role="button" data-iconpos="notext"></a>
+   <a href='#' class='ui-btn-left' data-icon='arrow-l' onclick="history.back(); return false" data-role="button" data-iconpos="notext"></a><center><img src="img/dispatchorama-logo.png"></center><a href="index.php" data-icon="home" data-role="button" data-iconpos="notext"></a>
 </div>
 
 <div data-role="content" data-fullscreen="true">
@@ -60,6 +60,8 @@ $maps_array = json_decode($maps_string, true); //json decoder
 	?>
 
 </div>		
+
+<?php include('footer.php'); ?>
 	
 </div>
 </body>

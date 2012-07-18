@@ -53,7 +53,7 @@ $twitter_array = json_decode($query, true); //json decoder
 		echo "<a href=\"directions-tweet.php?id=" . $id . "&transport=transit&currentloc=" . $currentloc . "&lat=" . $twitter_array['geo']['coordinates'][0] . "&long=" . $twitter_array['geo']['coordinates'][1] . "\" data-role=\"button\" data-icon=\"info\">public transport</a>";
 	?>
 	</div>
-</div>
+</div>		
 	
 </div>
 </body>
