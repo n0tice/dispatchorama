@@ -5,5 +5,6 @@ This project was inspired by some of the community outreach activities happening
 
 Dispatch-o-rama uses the n0tice API (http://n0tice.org).  I'm also trying to get some useful info out of other feeds, including twitter.
 
-http://dispatchorama.com/
+I've written about the project here:
+http://www.mattmcalister.com/blog/2012/07/20/1853/dispatchorama-a-distributed-approach-to-covering-a-distributed-news-event/
 
